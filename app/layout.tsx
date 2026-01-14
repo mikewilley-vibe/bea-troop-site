@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import ReadingProgress from "@/components/ReadingProgress";
+import SiteHeader from "@/components/SiteHeader";
 import { SITE_CONFIG, SCHEMA_ORG } from "@/lib/seo";
 
 export const metadata = {
@@ -59,6 +60,7 @@ export default function RootLayout({
       </head>
       <body className="text-slate-800" style={{ backgroundColor: '#F5FAF5' }}>
         <ReadingProgress />
+        <SiteHeader />
         <Nav />
         <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
         <Footer />

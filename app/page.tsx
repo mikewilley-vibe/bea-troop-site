@@ -103,6 +103,21 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Switzerland Countdown */}
+      <CountdownTimer 
+        targetDate={switzerlandDate} 
+        eventName="Switzerland Adventure Countdown"
+      />
+
+      {/* Activity Feed */}
+      <ActivityFeed />
+
+      {/* Testimonials */}
+      <TestimonialsCarousel />
+
+      {/* Newsletter Signup */}
+      <NewsletterSignup />
+
       {/* Privacy Notice */}
       <div
         className="rounded-lg p-6 border-l-4 shadow"
@@ -118,21 +133,6 @@ export default function Home() {
           For safety and privacy, we don't post girls' names or identifiable photos publicly.
         </p>
       </div>
-
-      {/* Switzerland Countdown */}
-      <CountdownTimer 
-        targetDate={switzerlandDate} 
-        eventName="Switzerland Adventure Countdown"
-      />
-
-      {/* Activity Feed */}
-      <ActivityFeed />
-
-      {/* Testimonials */}
-      <TestimonialsCarousel />
-
-      {/* Newsletter Signup */}
-      <NewsletterSignup />
     </section>
   );
 }
