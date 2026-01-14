@@ -89,15 +89,16 @@ export default function BadgeGrid() {
                 <div className="space-y-3">
                   {categoryBadges
                     .filter((b) => b.status === status)
-                    .map((badge) => {
+                    .map((badge, idx) => {
                       const statusStyle = getStatusColor(badge.status);
                       return (
                         <div
                           key={badge.id}
-                          className="rounded-lg p-4 shadow-md hover:shadow-lg transition"
+                          className="rounded-lg p-4 shadow-md hover:shadow-lg transition animate-fade-in-delay-1"
                           style={{
                             backgroundColor: statusStyle.bg,
                             borderLeft: `4px solid ${statusStyle.border}`,
+                            animationDelay: `${idx * 0.05}s`,
                           }}
                         >
                           <div className="flex items-start gap-3">

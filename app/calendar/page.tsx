@@ -14,10 +14,11 @@ export default function CalendarPage() {
         {events.map((event, idx) => (
           <div
             key={idx}
-            className="rounded-lg p-6 shadow-md"
+            className="rounded-lg p-6 shadow-md animate-fade-in-delay-1"
             style={{
               backgroundColor: "#E8F3E8",
               borderLeft: "4px solid #2D5016",
+              animationDelay: `${idx * 0.05}s`,
             }}
           >
             <div className="flex items-start justify-between">

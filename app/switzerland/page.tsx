@@ -70,10 +70,11 @@ export default function SwitzerlandTrip() {
           ].map((activity, idx) => (
             <div
               key={idx}
-              className="rounded-lg p-6 shadow-md"
+              className="rounded-lg p-6 shadow-md animate-fade-in-delay-1"
               style={{
                 backgroundColor: "#E8F3E8",
-                borderTop: "3px solid #2D5016"
+                borderTop: "3px solid #2D5016",
+                animationDelay: `${idx * 0.1}s`,
               }}
             >
               <div className="text-4xl mb-3">{activity.icon}</div>

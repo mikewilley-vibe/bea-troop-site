@@ -31,10 +31,11 @@ export default function CookiesPage() {
         ].map((item, idx) => (
           <div
             key={idx}
-            className="rounded-lg p-6 shadow-md text-center"
+            className="rounded-lg p-6 shadow-md text-center animate-fade-in-delay-1"
             style={{
               backgroundColor: "#E8F3E8",
-              borderTop: "3px solid #2D5016"
+              borderTop: "3px solid #2D5016",
+              animationDelay: `${idx * 0.1}s`,
             }}
           >
             <div className="text-4xl mb-3">{item.icon}</div>

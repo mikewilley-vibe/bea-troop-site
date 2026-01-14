@@ -49,10 +49,11 @@ export default function Home() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="rounded-lg p-4 shadow-md text-center"
+                className="rounded-lg p-4 shadow-md text-center animate-fade-in-delay-1"
                 style={{
                   backgroundColor: "rgba(232, 243, 232, 0.95)",
                   borderTop: "3px solid #2D5016",
+                  animationDelay: `${idx * 0.1}s`,
                 }}
               >
                 <div className="text-3xl mb-2">{item.icon}</div>
@@ -67,7 +68,7 @@ export default function Home() {
           {/* Next Meeting on Image */}
           {nextEvent && (
             <div
-              className="rounded-lg p-6 shadow-lg max-w-sm"
+              className="rounded-lg p-6 shadow-lg max-w-sm animate-fade-in-delay-3"
               style={{
                 backgroundColor: "rgba(232, 243, 232, 0.95)",
                 borderLeft: "4px solid #2D5016"

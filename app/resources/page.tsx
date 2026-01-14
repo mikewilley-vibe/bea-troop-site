@@ -23,15 +23,16 @@ export default function ResourcesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {resources
               .filter((r) => r.category === category)
-              .map((resource) => (
+              .map((resource, idx) => (
                 <a
                   key={resource.id}
                   href={resource.link}
-                  className="rounded-lg p-6 shadow-md hover:shadow-lg transition"
+                  className="rounded-lg p-6 shadow-md hover:shadow-lg transition animate-fade-in-delay-1"
                   style={{
                     backgroundColor: "#E8F3E8",
                     borderTop: "3px solid #2D5016",
                     textDecoration: "none",
+                    animationDelay: `${idx * 0.05}s`,
                   }}
                 >
                   <h3
