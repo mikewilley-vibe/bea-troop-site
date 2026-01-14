@@ -44,16 +44,16 @@ export default function ContactPage() {
 
       {/* General Info */}
       <div
-        className="rounded-lg p-6 shadow-md mb-6\""
+        className="rounded-lg p-6 shadow-md mb-6"
         style={{
-          backgroundColor: \"#E8F3E8\",
-          borderLeft: \"4px solid #2D5016\"
+          backgroundColor: "#E8F3E8",
+          borderLeft: "4px solid #2D5016"
         }}
       >
-        <h3 className=\"text-lg font-bold mb-3\" style={{ color: \"#2D5016\" }}>
+        <h3 className="text-lg font-bold mb-3" style={{ color: "#2D5016" }}>
           📍 Meeting Location
         </h3>
-        <p className=\"text-slate-700\">
+        <p className="text-slate-700">
           Community Center<br />
           123 Main Street<br />
           Your City, State 12345
