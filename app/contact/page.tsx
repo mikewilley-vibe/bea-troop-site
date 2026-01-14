@@ -1,6 +1,12 @@
+'use client';
+
+import Breadcrumb from "@/components/Breadcrumb";
+import ContactForm from "@/components/ContactForm";
+
 export default function ContactPage() {
   return (
     <div>
+      <Breadcrumb />
       <h1 className="text-3xl font-bold mb-2" style={{ color: "#2D5016" }}>
         📧 Contact Us
       </h1>
@@ -61,20 +67,49 @@ export default function ContactPage() {
         </p>
       </div>
 
+      {/* Map */}
+      <div className="mb-8">
+        <h3 className="text-lg font-bold mb-4" style={{ color: "#2D5016" }}>📌 Find Us</h3>
+        <iframe
+          width="100%"
+          height="400"
+          style={{ border: 0, borderRadius: '8px' }}
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890!2d-74.00!3d40.71!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjMuNjM4ODMsIDQ2LjcxODg4!5e0!3m2!1sen!2sus!4v1234567890"
+          title="Troop 21 Meeting Location"
+        ></iframe>
+        <p className="text-sm text-slate-600 mt-2">
+          Click the map or search "Community Center, Your City" in Google Maps for directions.
+        </p>
+      </div>
+
       {/* Quick Note */}
       <div
-        className="rounded-lg p-6 shadow"
+        className="rounded-lg p-6 shadow mb-8"
         style={{
           backgroundColor: "#FFF8DC",
           borderLeft: "4px solid #2D5016",
         }}
       >
         <p className="font-semibold" style={{ color: "#2D5016" }}>
-          💬 Send a Message
+          💬 Send us a Message
         </p>
         <p className="text-slate-700 mt-2">
-          For general inquiries about the troop, cookie sales, or volunteering opportunities, please reach out to your troop leader. They'll be happy to help!
+          Use the form below for inquiries about the troop, cookie sales, or volunteering opportunities. We'll get back to you within 48 hours!
         </p>
+      </div>
+
+      {/* Contact Form */}
+      <div
+        className="rounded-lg p-8 shadow-md"
+        style={{
+          backgroundColor: "#E8F3E8",
+          borderLeft: "4px solid #2D5016"
+        }}
+      >
+        <h2 className="text-2xl font-bold mb-6" style={{ color: "#2D5016" }}>
+          Contact Form
+        </h2>
+        <ContactForm />
       </div>
     </div>
   );

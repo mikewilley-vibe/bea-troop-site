@@ -1,8 +1,12 @@
+'use client';
+
 import { events } from "@/data/events";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function CalendarPage() {
   return (
     <div>
+      <Breadcrumb />
       <h1 className="text-3xl font-bold mb-2" style={{ color: "#2D5016" }}>
         📅 Troop Calendar
       </h1>

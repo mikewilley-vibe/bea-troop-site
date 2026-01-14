@@ -1,6 +1,11 @@
+'use client';
+
+import { useState } from 'react';
+import DetailModal from './DetailModal';
 import { badges } from "@/data/badges";
 
 export default function BadgeGrid() {
+  const [selectedBadge, setSelectedBadge] = useState<typeof badges[0] | null>(null);
   // Group badges by category
   const badgesByCategory = badges.reduce(
     (acc, badge) => {
@@ -92,9 +97,10 @@ export default function BadgeGrid() {
                     .map((badge, idx) => {
                       const statusStyle = getStatusColor(badge.status);
                       return (
-                        <div
+                        <button
                           key={badge.id}
-                          className="rounded-lg p-4 shadow-md hover:shadow-lg transition animate-fade-in-delay-1"
+                          onClick={() => setSelectedBadge(badge)}
+                          className="w-full rounded-lg p-4 shadow-md hover:shadow-lg hover:scale-105 transition animate-fade-in-delay-1 text-left"
                           style={{
                             backgroundColor: statusStyle.bg,
                             borderLeft: `4px solid ${statusStyle.border}`,
@@ -118,9 +124,10 @@ export default function BadgeGrid() {
                               <p className="text-xs text-slate-600 mt-1">
                                 {badge.description}
                               </p>
+                              <p className="text-xs font-semibold mt-2" style={{ color: statusStyle.border }}>Click to learn more →</p>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       );
                     })}
                 </div>
@@ -129,6 +136,18 @@ export default function BadgeGrid() {
           </div>
         </div>
       ))}
+
+      {/* Badge Detail Modal */}
+      <DetailModal
+        isOpen={!!selectedBadge}
+        onClose={() => setSelectedBadge(null)}
+        title={selectedBadge?.name || ''}
+        description={selectedBadge?.description || ''}
+        details={{
+          'Category': selectedBadge?.category || '',
+          'Status': selectedBadge?.status === 'earned' ? 'Earned ✓' : selectedBadge?.status === 'worked' ? 'In Progress ◐' : 'Planned ○',
+        }}
+      />
     </div>
   );
 }

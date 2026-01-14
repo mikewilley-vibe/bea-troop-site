@@ -1,6 +1,11 @@
+'use client';
+
+import Breadcrumb from "@/components/Breadcrumb";
+
 export default function SwitzerlandTrip() {
   return (
     <div>
+      <Breadcrumb />
       <h1 className="text-3xl font-bold mb-2" style={{ color: "#2D5016" }}>
         🇨🇭 Switzerland Adventure 2026
       </h1>

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import CookieOrderForm from "@/components/CookieOrderForm";
 import DetailModal from "@/components/DetailModal";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const COOKIES_INFO = [
   {
@@ -60,6 +61,7 @@ export default function CookiesPage() {
 
   return (
     <div>
+      <Breadcrumb />
       <h1 className="text-3xl font-bold mb-2" style={{ color: "#2D5016" }}>
         Girl Scout Cookie Sale 🍪
       </h1>

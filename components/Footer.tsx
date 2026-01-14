@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import SocialLinks from './SocialLinks';
 
 export default function Footer() {
   const links = [
@@ -42,10 +43,12 @@ export default function Footer() {
           {/* Social & Info */}
           <div>
             <p className="font-bold mb-3" style={{ color: "#2D5016" }}>Connect</p>
-            <div className="space-y-2 text-sm">
-              <p style={{ color: "#2D5016" }}>📧 Contact us for more info</p>
-              <p style={{ color: "#2D5016" }}>📍 Girl Scouts of America</p>
-              <p style={{ color: "#2D5016" }}>🔗 www.girlscouts.org</p>
+            <div className="space-y-3">
+              <SocialLinks />
+              <div>
+                <p style={{ color: "#2D5016" }} className="text-sm">📧 info@troop21.org</p>
+                <p style={{ color: "#2D5016" }} className="text-sm">🔗 www.girlscouts.org</p>
+              </div>
             </div>
           </div>
         </div>

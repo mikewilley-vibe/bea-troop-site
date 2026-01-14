@@ -1,10 +1,14 @@
+'use client';
+
 import { resources } from "@/data/resources";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function ResourcesPage() {
   const categories = [...new Set(resources.map((r) => r.category))];
 
   return (
     <div>
+      <Breadcrumb />
       <h1 className="text-3xl font-bold mb-2" style={{ color: "#2D5016" }}>
         📚 Troop Resources
       </h1>
