@@ -1,6 +1,63 @@
+'use client';
+
+import { useState } from 'react';
 import CookieOrderForm from "@/components/CookieOrderForm";
+import DetailModal from "@/components/DetailModal";
+
+const COOKIES_INFO = [
+  {
+    name: "Thin Mints",
+    icon: "🍫",
+    description: "Crispy chocolate cookies dipped in a thin layer of chocolate mint icing",
+    allergens: ["Soy", "Wheat", "Tree Nuts"],
+    taste: "Rich chocolate with refreshing mint flavor",
+    price: "$6.00 per box",
+  },
+  {
+    name: "Caramel Delites",
+    icon: "🍪",
+    description: "Chocolate cookies topped with caramel and a sprinkle of coconut",
+    allergens: ["Soy", "Wheat", "Coconut"],
+    taste: "Sweet caramel with a hint of coconut",
+    price: "$6.00 per box",
+  },
+  {
+    name: "Peanut Butter Patties",
+    icon: "🥜",
+    description: "Chocolate cookies with a peanut butter filling",
+    allergens: ["Peanuts", "Soy", "Wheat"],
+    taste: "Creamy peanut butter with chocolate",
+    price: "$6.00 per box",
+  },
+  {
+    name: "Girl Scout S'mores",
+    icon: "🏕️",
+    description: "Chocolate cookies with marshmallow and graham cracker pieces",
+    allergens: ["Wheat", "Soy"],
+    taste: "Campfire favorite in cookie form",
+    price: "$6.00 per box",
+  },
+  {
+    name: "Peanut Butter Cookie Crumbs",
+    icon: "🍪",
+    description: "Peanut butter cookies with crispy cookie pieces baked in",
+    allergens: ["Peanuts", "Soy", "Wheat"],
+    taste: "Crunchy peanut butter goodness",
+    price: "$6.00 per box",
+  },
+  {
+    name: "Lemonades",
+    icon: "🍋",
+    description: "Crispy lemon cookies with a delightful citrus flavor",
+    allergens: ["Wheat", "Soy"],
+    taste: "Bright and refreshing lemon flavor",
+    price: "$6.00 per box",
+  },
+];
 
 export default function CookiesPage() {
+  const [selectedCookie, setSelectedCookie] = useState<typeof COOKIES_INFO[0] | null>(null);
+
   return (
     <div>
       <h1 className="text-3xl font-bold mb-2" style={{ color: "#2D5016" }}>
@@ -31,7 +88,7 @@ export default function CookiesPage() {
         ].map((item, idx) => (
           <div
             key={idx}
-            className="rounded-lg p-6 shadow-md text-center animate-fade-in-delay-1"
+            className="rounded-lg p-6 shadow-md text-center animate-fade-in-delay-1 hover:shadow-lg transition-shadow cursor-pointer"
             style={{
               backgroundColor: "#E8F3E8",
               borderTop: "3px solid #2D5016",
@@ -66,6 +123,35 @@ export default function CookiesPage() {
         <p className="text-slate-600 mb-8">
           Discover the exciting new Exploramores program! Girl Scouts in grades K-2 can now join this immersive experience designed to build confidence and explore new interests.
         </p>
+      </div>
+
+      {/* Browse Cookies - Click for Details */}
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold mb-6" style={{ color: "#2D5016" }}>
+          🍪 Our Cookie Varieties
+        </h2>
+        <p className="text-slate-600 mb-6">Click any cookie to learn more details</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {COOKIES_INFO.map((cookie, idx) => (
+            <button
+              key={cookie.name}
+              onClick={() => setSelectedCookie(cookie)}
+              className="rounded-lg p-6 shadow-md text-center animate-fade-in-delay-1 hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
+              style={{
+                backgroundColor: "#E8F3E8",
+                borderLeft: "4px solid #2D5016",
+                animationDelay: `${idx * 0.05}s`,
+              }}
+            >
+              <div className="text-5xl mb-3">{cookie.icon}</div>
+              <h3 className="text-lg font-bold mb-2" style={{ color: "#2D5016" }}>
+                {cookie.name}
+              </h3>
+              <p className="text-slate-700 text-sm">{cookie.description}</p>
+              <p className="text-xs text-slate-600 mt-3 font-semibold">Click to learn more →</p>
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Cookie Order Form */}
@@ -110,6 +196,20 @@ export default function CookiesPage() {
           </p>
         </div>
       </div>
+
+      {/* Cookie Detail Modal */}
+      <DetailModal
+        isOpen={!!selectedCookie}
+        onClose={() => setSelectedCookie(null)}
+        title={selectedCookie?.name || ''}
+        description={selectedCookie?.description || ''}
+        icon={selectedCookie?.icon}
+        details={{
+          'Flavor Profile': selectedCookie?.taste || '',
+          'Allergens': selectedCookie?.allergens?.join(', ') || '',
+          'Price': selectedCookie?.price || '',
+        }}
+      />
     </div>
   );
 }

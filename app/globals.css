@@ -57,3 +57,81 @@ body {
   animation: fadeIn 0.6s ease-out 0.3s forwards;
   opacity: 0;
 }
+
+@keyframes pageTransition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+main {
+  animation: pageTransition 0.4s ease-out;
+}
+
+@keyframes slideInMobile {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.mobile-menu-enter {
+  animation: slideInMobile 0.3s ease-out;
+}
+
+/* Link hover effects */
+a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Underline animation for links */
+a:not([style*="text-decoration: none"]) {
+  text-decoration: none;
+}
+
+a:not([style*="text-decoration: none"])::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+a:not([style*="text-decoration: none"]):hover::after {
+  width: 100%;
+}
+
+/* Form validation animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+input:invalid:focus {
+  animation: shake 0.3s ease;
+  border-color: #ef4444 !important;
+}
+
+input:valid:focus {
+  border-color: #22c55e !important;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+  }
+}

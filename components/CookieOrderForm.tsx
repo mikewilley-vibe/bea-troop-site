@@ -129,7 +129,8 @@ export default function CookieOrderForm() {
             onChange={(e) =>
               setCustomerInfo({ ...customerInfo, name: e.target.value })
             }
-            className="w-full rounded p-3 border-2 focus:outline-none"
+            required
+            className="w-full rounded p-3 border-2 focus:outline-none transition-colors"
             style={{ borderColor: "#2D5016" }}
           />
           <input
@@ -139,7 +140,8 @@ export default function CookieOrderForm() {
             onChange={(e) =>
               setCustomerInfo({ ...customerInfo, email: e.target.value })
             }
-            className="w-full rounded p-3 border-2 focus:outline-none"
+            required
+            className="w-full rounded p-3 border-2 focus:outline-none transition-colors"
             style={{ borderColor: "#2D5016" }}
           />
           <input
@@ -149,7 +151,8 @@ export default function CookieOrderForm() {
             onChange={(e) =>
               setCustomerInfo({ ...customerInfo, phone: e.target.value })
             }
-            className="w-full rounded p-3 border-2 focus:outline-none"
+            required
+            className="w-full rounded p-3 border-2 focus:outline-none transition-colors"
             style={{ borderColor: "#2D5016" }}
           />
         </div>
