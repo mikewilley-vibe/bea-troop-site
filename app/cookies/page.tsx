@@ -194,7 +194,7 @@ export default function CookiesPage() {
             <strong>Allergen Information:</strong> Please review allergen details for each cookie variety above. Cookies contain various allergens including wheat, soy, peanuts, and tree nuts.
           </p>
           <p>
-            <strong>Delivery:</strong> Orders will be delivered by Troop 21 in the coming weeks. Thank you for supporting Girl Scout Brownies!
+            <strong>Delivery:</strong> Orders will be delivered by Troop 21 in the coming weeks. Thank you for supporting Girl Scout Scouts!
           </p>
         </div>
       </div>

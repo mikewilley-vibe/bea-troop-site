@@ -11,7 +11,7 @@ export default function BadgesPage() {
         Girl Scout Badges
       </h1>
       <p className="text-slate-600 mb-8">
-        Explore the badges our Brownies can earn. Each badge represents skills learned and experiences gained! Click any badge to see details.
+        Explore the badges our Scouts can earn. Each badge represents skills learned and experiences gained! Click any badge to see details.
       </p>
       <BadgeGrid />
     </div>

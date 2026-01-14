@@ -11,7 +11,7 @@ export const activityFeed = [
     date: 'Jan 10, 2026',
     icon: '🎖️',
     title: 'New Badge Earned',
-    description: 'Congratulations to our Brownies who earned their Friendship Badge!',
+    description: 'Congratulations to our Scouts who earned their Friendship Badge!',
   },
   {
     id: 3,

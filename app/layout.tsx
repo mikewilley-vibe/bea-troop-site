@@ -9,7 +9,7 @@ import { SITE_CONFIG, SCHEMA_ORG } from "@/lib/seo";
 export const metadata = {
   title: SITE_CONFIG.title,
   description: SITE_CONFIG.description,
-  keywords: ['Girl Scout', 'Troop 21', 'Brownies', 'Cookies', 'Leadership', 'Community Service'],
+  keywords: ['Girl Scout', 'Troop 21', 'Scouts', 'Cookies', 'Leadership', 'Community Service'],
   authors: [{ name: SITE_CONFIG.author }],
   openGraph: {
     title: SITE_CONFIG.title,

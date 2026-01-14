@@ -1,13 +1,11 @@
 import { events } from "@/data/events";
 import Image from "next/image";
-import CountdownTimer from "@/components/CountdownTimer";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import ActivityFeed from "@/components/ActivityFeed";
 import NewsletterSignup from "@/components/NewsletterSignup";
 
 export default function Home() {
   const nextEvent = events[0];
-  const switzerlandDate = new Date('2026-07-04');
 
   return (
     <section className="space-y-12">
@@ -102,12 +100,6 @@ export default function Home() {
           )}
         </div>
       </div>
-
-      {/* Switzerland Countdown */}
-      <CountdownTimer 
-        targetDate={switzerlandDate} 
-        eventName="Switzerland Adventure Countdown"
-      />
 
       {/* Activity Feed */}
       <ActivityFeed />
