@@ -46,6 +46,27 @@ export default function CookiesPage() {
         ))}
       </div>
 
+      {/* Exploramores Video */}
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold mb-6" style={{ color: "#2D5016" }}>
+          🎥 Meet Our New Exploramores!
+        </h2>
+        <div className="rounded-lg overflow-hidden shadow-md mb-8">
+          <iframe
+            width="100%"
+            height="480"
+            src="https://www.youtube.com/embed/MhqJRQkcu5U"
+            title="New Girl Scout Exploramores"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <p className="text-slate-600 mb-8">
+          Discover the exciting new Exploramores program! Girl Scouts in grades K-2 can now join this immersive experience designed to build confidence and explore new interests.
+        </p>
+      </div>
+
       {/* Cookie Order Form */}
       <div className="mb-10">
         <h2 className="text-2xl font-bold mb-6" style={{ color: "#2D5016" }}>
