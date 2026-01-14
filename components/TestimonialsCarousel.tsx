@@ -14,29 +14,29 @@ export default function TestimonialsCarousel() {
 
   return (
     <div
-      className="rounded-lg p-8 shadow-md animate-fade-in"
+      className="rounded-xl p-8 shadow-lg animate-fade-in card-hover transition-all duration-300"
       style={{
         backgroundColor: '#E8F3E8',
         borderLeft: '4px solid #2D5016',
       }}
     >
-      <h2 className="text-2xl font-bold mb-6 text-center" style={{ color: '#2D5016' }}>
+      <h2 className="text-3xl font-bold mb-8 text-center drop-shadow-sm" style={{ color: '#2D5016' }}>
         💬 What People Say
       </h2>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-6">
         <button
           onClick={prev}
-          className="p-2 rounded-lg hover:shadow-md transition"
+          className="p-3 rounded-lg hover:shadow-md transition-all transform hover:scale-110 active:scale-95 flex-shrink-0"
           style={{ backgroundColor: '#2D5016', color: 'white' }}
           aria-label="Previous testimonial"
         >
           ←
         </button>
 
-        <div className="flex-1 text-center">
-          <p className="text-4xl mb-3">{testimonial.emoji}</p>
-          <p className="text-slate-700 italic mb-4 text-lg">"{testimonial.text}"</p>
+        <div className="flex-1 text-center animate-scale-in">
+          <p className="text-5xl mb-4 transform hover:scale-125 transition-transform duration-300 cursor-pointer">{testimonial.emoji}</p>
+          <p className="text-slate-700 italic mb-6 text-lg leading-relaxed min-h-24">&quot;{testimonial.text}&quot;</p>
           <p className="font-bold" style={{ color: '#2D5016' }}>
             — {testimonial.name}
           </p>
@@ -45,7 +45,7 @@ export default function TestimonialsCarousel() {
 
         <button
           onClick={next}
-          className="p-2 rounded-lg hover:shadow-md transition"
+          className="p-3 rounded-lg hover:shadow-md transition-all transform hover:scale-110 active:scale-95 flex-shrink-0"
           style={{ backgroundColor: '#2D5016', color: 'white' }}
           aria-label="Next testimonial"
         >
@@ -53,15 +53,16 @@ export default function TestimonialsCarousel() {
         </button>
       </div>
 
-      <div className="flex gap-2 justify-center mt-6">
+      <div className="flex gap-3 justify-center mt-8">
         {testimonials.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className="w-2 h-2 rounded-full transition-all"
+            className="rounded-full transition-all duration-300 hover:shadow-md hover:scale-110 active:scale-95"
             style={{
               backgroundColor: idx === current ? '#2D5016' : '#ccc',
-              width: idx === current ? '24px' : '8px',
+              width: idx === current ? '32px' : '10px',
+              height: '10px',
             }}
             aria-label={`Go to testimonial ${idx + 1}`}
           />

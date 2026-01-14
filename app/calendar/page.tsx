@@ -7,10 +7,10 @@ export default function CalendarPage() {
   return (
     <div>
       <Breadcrumb />
-      <h1 className="text-3xl font-bold mb-2" style={{ color: "#2D5016" }}>
+      <h1 className="text-3xl font-bold mb-2 drop-shadow-sm" style={{ color: "#2D5016" }}>
         📅 Troop Calendar
       </h1>
-      <p className="text-slate-600 mb-8">
+      <p className="text-slate-600 mb-8 text-lg">
         Mark your calendars! Here are our upcoming troop events and meetings.
       </p>
 
@@ -18,7 +18,7 @@ export default function CalendarPage() {
         {events.map((event, idx) => (
           <div
             key={idx}
-            className="rounded-lg p-6 shadow-md animate-fade-in-delay-1"
+            className="rounded-xl p-6 shadow-lg hover:shadow-2xl animate-fade-in-delay-1 card-hover transition-all transform hover:scale-102"
             style={{
               backgroundColor: "#E8F3E8",
               borderLeft: "4px solid #2D5016",
@@ -27,7 +27,7 @@ export default function CalendarPage() {
           >
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="text-xl font-bold" style={{ color: "#2D5016" }}>
+                <h3 className="text-xl font-bold drop-shadow-sm" style={{ color: "#2D5016" }}>
                   {event.title}
                 </h3>
                 <p className="text-slate-700 mt-2">
@@ -48,13 +48,13 @@ export default function CalendarPage() {
       </div>
 
       <div
-        className="rounded-lg p-6 mt-8 shadow"
+        className="rounded-xl p-6 mt-8 shadow-lg card-hover transition-all duration-300 transform hover:scale-102"
         style={{
           backgroundColor: "#FFF8DC",
           borderLeft: "4px solid #2D5016",
         }}
       >
-        <p className="font-semibold" style={{ color: "#2D5016" }}>
+        <p className="font-semibold text-lg" style={{ color: "#2D5016" }}>
           ✉️ Stay Updated
         </p>
         <p className="text-slate-700 mt-2">

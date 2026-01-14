@@ -6,30 +6,30 @@ export default function SwitzerlandTrip() {
   return (
     <div>
       <Breadcrumb />
-      <h1 className="text-3xl font-bold mb-2" style={{ color: "#2D5016" }}>
+      <h1 className="text-3xl font-bold mb-2 drop-shadow-sm" style={{ color: "#2D5016" }}>
         🇨🇭 Switzerland Adventure 2026
       </h1>
-      <p className="text-slate-600 mb-8">
+      <p className="text-slate-600 mb-8 text-lg">
         Troop 21 is heading to Switzerland for an incredible international experience!
       </p>
 
       {/* Trip Details */}
       <div
-        className="rounded-lg p-8 mb-8 shadow-md"
+        className="rounded-xl p-8 mb-8 shadow-xl card-hover transition-all duration-300"
         style={{
           background: "linear-gradient(135deg, #2D5016 0%, #3D7B2F 100%)",
           color: "white",
         }}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h2 className="text-2xl font-bold mb-3">📅 Trip Dates</h2>
-            <p className="text-lg">July 4th - July 14th, 2026</p>
+          <div className="transform hover:scale-105 transition-transform duration-200">
+            <h2 className="text-2xl font-bold mb-3 drop-shadow-lg">📅 Trip Dates</h2>
+            <p className="text-lg font-semibold">July 4th - July 14th, 2026</p>
             <p className="text-sm opacity-90 mt-2">11 days of adventure!</p>
           </div>
-          <div>
-            <h2 className="text-2xl font-bold mb-3">✈️ Destination</h2>
-            <p className="text-lg">Switzerland</p>
+          <div className="transform hover:scale-105 transition-transform duration-200">
+            <h2 className="text-2xl font-bold mb-3 drop-shadow-lg">✈️ Destination</h2>
+            <p className="text-lg font-semibold">Switzerland</p>
             <p className="text-sm opacity-90 mt-2">Explore the Alps and Swiss culture</p>
           </div>
         </div>
@@ -37,7 +37,7 @@ export default function SwitzerlandTrip() {
 
       {/* What We'll Do */}
       <div className="mb-10">
-        <h2 className="text-2xl font-bold mb-6" style={{ color: "#2D5016" }}>
+        <h2 className="text-3xl font-bold mb-8 drop-shadow-sm" style={{ color: "#2D5016" }}>
           🎯 What We'll Experience
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -75,18 +75,18 @@ export default function SwitzerlandTrip() {
           ].map((activity, idx) => (
             <div
               key={idx}
-              className="rounded-lg p-6 shadow-md animate-fade-in-delay-1"
+              className="rounded-xl p-6 shadow-lg hover:shadow-2xl animate-fade-in-delay-1 card-hover transition-all transform hover:scale-105"
               style={{
                 backgroundColor: "#E8F3E8",
-                borderTop: "3px solid #2D5016",
+                borderTop: "4px solid #2D5016",
                 animationDelay: `${idx * 0.1}s`,
               }}
             >
-              <div className="text-4xl mb-3">{activity.icon}</div>
-              <h3 className="text-lg font-bold mb-2" style={{ color: "#2D5016" }}>
+              <div className="text-5xl mb-3 transform hover:scale-110 transition-transform duration-200">{activity.icon}</div>
+              <h3 className="text-lg font-bold mb-2 drop-shadow-sm" style={{ color: "#2D5016" }}>
                 {activity.title}
               </h3>
-              <p className="text-slate-700 text-sm">{activity.description}</p>
+              <p className="text-slate-700 text-sm leading-relaxed">{activity.description}</p>
             </div>
           ))}
         </div>
@@ -94,17 +94,17 @@ export default function SwitzerlandTrip() {
 
       {/* Why This Trip */}
       <div
-        className="rounded-lg p-8 mb-8 shadow-md"
+        className="rounded-xl p-8 mb-8 shadow-lg card-hover transition-all duration-300"
         style={{
           backgroundColor: "#E8F3E8",
           borderLeft: "4px solid #2D5016"
         }}
       >
-        <h2 className="text-2xl font-bold mb-4" style={{ color: "#2D5016" }}>
+        <h2 className="text-3xl font-bold mb-4 drop-shadow-sm" style={{ color: "#2D5016" }}>
           🌍 Why International Travel?
         </h2>
         <div className="space-y-3 text-slate-700">
-          <p>
+          <p className="text-lg leading-relaxed">
             International travel is a cornerstone of the Girl Scout experience. Our Switzerland trip will:
           </p>
           <ul className="list-disc list-inside space-y-2 ml-2">
@@ -120,7 +120,7 @@ export default function SwitzerlandTrip() {
 
       {/* Preparation */}
       <div className="mb-10">
-        <h2 className="text-2xl font-bold mb-6" style={{ color: "#2D5016" }}>
+        <h2 className="text-3xl font-bold mb-8 drop-shadow-sm" style={{ color: "#2D5016" }}>
           📋 Trip Preparation
         </h2>
         <div className="space-y-4">
@@ -134,13 +134,13 @@ export default function SwitzerlandTrip() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="rounded-lg p-4 bg-white shadow"
+              className="rounded-lg p-4 bg-white shadow-md hover:shadow-lg transition-all transform hover:scale-101 card-hover"
               style={{
                 backgroundColor: "#F5FAF5",
-                borderLeft: "3px solid #2D5016"
+                borderLeft: "4px solid #2D5016"
               }}
             >
-              <p className="font-semibold text-slate-800">✓ {item}</p>
+              <p className="font-semibold text-slate-800 text-lg">✓ {item}</p>
             </div>
           ))}
         </div>
@@ -148,19 +148,19 @@ export default function SwitzerlandTrip() {
 
       {/* Contact Info */}
       <div
-        className="rounded-lg p-8 shadow"
+        className="rounded-xl p-8 shadow-lg card-hover transition-all duration-300 transform hover:scale-102"
         style={{
           backgroundColor: "#FFF8DC",
           borderLeft: "4px solid #2D5016"
         }}
       >
-        <h2 className="text-2xl font-bold mb-4" style={{ color: "#2D5016" }}>
+        <h2 className="text-3xl font-bold mb-4 drop-shadow-sm" style={{ color: "#2D5016" }}>
           ❓ Questions?
         </h2>
-        <p className="text-slate-700 mb-4">
+        <p className="text-slate-700 mb-4 text-lg leading-relaxed">
           For more information about the Switzerland trip, including costs, itinerary details, and registration, please contact your troop leader.
         </p>
-        <p className="text-slate-700 font-semibold">
+        <p className="text-slate-700 font-semibold text-lg">
           This adventure awaits! 🚀
         </p>
       </div>

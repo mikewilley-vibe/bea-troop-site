@@ -25,16 +25,16 @@ export default function NewsletterSignup() {
 
   return (
     <div
-      className="rounded-lg p-8 shadow-md animate-fade-in mb-8"
+      className="rounded-xl p-8 shadow-lg animate-fade-in mb-8 card-hover transition-all duration-300"
       style={{
         backgroundColor: '#E8F3E8',
         borderLeft: '4px solid #2D5016',
       }}
     >
-      <h3 className="text-2xl font-bold mb-2" style={{ color: '#2D5016' }}>
+      <h3 className="text-3xl font-bold mb-2 drop-shadow-sm" style={{ color: '#2D5016' }}>
         📬 Stay Updated!
       </h3>
-      <p className="text-slate-700 mb-6">
+      <p className="text-slate-700 mb-6 text-lg">
         Subscribe to our newsletter for updates on meetings, events, and cookie sales.
       </p>
 
@@ -44,22 +44,24 @@ export default function NewsletterSignup() {
           placeholder="Your email address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 rounded px-4 py-3 border-2 focus:outline-none transition-colors"
+          className="flex-1 rounded-lg px-4 py-3 border-2 focus:outline-none transition-all focus:scale-105 focus:shadow-lg duration-200"
           style={{ borderColor: '#2D5016' }}
           required
         />
         <button
           type="submit"
-          className="px-6 py-3 rounded font-semibold transition-all hover:shadow-lg"
+          className="px-8 py-3 rounded-lg font-semibold transition-all hover:shadow-xl hover:scale-105 active:scale-95 transform"
           style={{
             backgroundColor: '#2D5016',
             color: 'white',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = '#3D7B2F';
+            e.currentTarget.style.transform = 'scale(1.05)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = '#2D5016';
+            e.currentTarget.style.transform = 'scale(1)';
           }}
         >
           Subscribe
@@ -67,10 +69,10 @@ export default function NewsletterSignup() {
       </form>
 
       {status === 'success' && (
-        <p className="mt-3 text-green-600 font-semibold animate-fade-in">{message}</p>
+        <p className="mt-3 text-green-600 font-semibold animate-fade-in text-lg drop-shadow-sm">{message}</p>
       )}
       {status === 'error' && (
-        <p className="mt-3 text-red-600 font-semibold animate-fade-in">{message}</p>
+        <p className="mt-3 text-red-600 font-semibold animate-fade-in text-lg drop-shadow-sm">{message}</p>
       )}
     </div>
   );

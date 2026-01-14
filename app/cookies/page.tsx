@@ -90,14 +90,14 @@ export default function CookiesPage() {
         ].map((item, idx) => (
           <div
             key={idx}
-            className="rounded-lg p-6 shadow-md text-center animate-fade-in-delay-1 hover:shadow-lg transition-shadow cursor-pointer"
+            className="rounded-xl p-6 shadow-lg text-center animate-fade-in-delay-1 hover:shadow-xl hover:scale-105 transition-all card-hover cursor-pointer transform"
             style={{
               backgroundColor: "#E8F3E8",
-              borderTop: "3px solid #2D5016",
+              borderTop: "4px solid #2D5016",
               animationDelay: `${idx * 0.1}s`,
             }}
           >
-            <div className="text-4xl mb-3">{item.icon}</div>
+            <div className="text-5xl mb-3 transform hover:scale-110 transition-transform duration-200">{item.icon}</div>
             <h3 className="text-lg font-bold mb-2" style={{ color: "#2D5016" }}>
               {item.title}
             </h3>
@@ -108,10 +108,10 @@ export default function CookiesPage() {
 
       {/* Exploramores Video */}
       <div className="mb-10">
-        <h2 className="text-2xl font-bold mb-6" style={{ color: "#2D5016" }}>
+        <h2 className="text-3xl font-bold mb-8 drop-shadow-sm" style={{ color: "#2D5016" }}>
           🎥 Meet Our New Exploramores!
         </h2>
-        <div className="rounded-lg overflow-hidden shadow-md mb-8">
+        <div className="rounded-xl overflow-hidden shadow-xl mb-8 card-hover transition-all duration-300 hover:shadow-2xl">
           <iframe
             width="100%"
             height="480"
@@ -122,31 +122,31 @@ export default function CookiesPage() {
             allowFullScreen
           ></iframe>
         </div>
-        <p className="text-slate-600 mb-8">
+        <p className="text-slate-600 mb-8 text-lg leading-relaxed">
           Discover the exciting new Exploramores program! Girl Scouts in grades K-2 can now join this immersive experience designed to build confidence and explore new interests.
         </p>
       </div>
 
       {/* Browse Cookies - Click for Details */}
       <div className="mb-10">
-        <h2 className="text-2xl font-bold mb-6" style={{ color: "#2D5016" }}>
+        <h2 className="text-3xl font-bold mb-8 drop-shadow-sm" style={{ color: "#2D5016" }}>
           🍪 Our Cookie Varieties
         </h2>
-        <p className="text-slate-600 mb-6">Click any cookie to learn more details</p>
+        <p className="text-slate-600 mb-6 text-lg font-semibold">Click any cookie to learn more details</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {COOKIES_INFO.map((cookie, idx) => (
             <button
               key={cookie.name}
               onClick={() => setSelectedCookie(cookie)}
-              className="rounded-lg p-6 shadow-md text-center animate-fade-in-delay-1 hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
+              className="rounded-xl p-6 shadow-lg text-center animate-fade-in-delay-1 hover:shadow-2xl hover:scale-105 transition-all cursor-pointer card-hover transform"
               style={{
                 backgroundColor: "#E8F3E8",
                 borderLeft: "4px solid #2D5016",
                 animationDelay: `${idx * 0.05}s`,
               }}
             >
-              <div className="text-5xl mb-3">{cookie.icon}</div>
-              <h3 className="text-lg font-bold mb-2" style={{ color: "#2D5016" }}>
+              <div className="text-6xl mb-3 transform hover:scale-110 transition-transform duration-200">{cookie.icon}</div>
+              <h3 className="text-lg font-bold mb-2 drop-shadow-sm" style={{ color: "#2D5016" }}>
                 {cookie.name}
               </h3>
               <p className="text-slate-700 text-sm">{cookie.description}</p>

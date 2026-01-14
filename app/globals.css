@@ -28,6 +28,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ============ FADE IN ANIMATIONS ============ */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -58,6 +59,7 @@ body {
   opacity: 0;
 }
 
+/* ============ PAGE TRANSITION ANIMATIONS ============ */
 @keyframes pageTransition {
   from {
     opacity: 0;
@@ -71,6 +73,7 @@ main {
   animation: pageTransition 0.4s ease-out;
 }
 
+/* ============ SLIDE IN ANIMATIONS ============ */
 @keyframes slideInMobile {
   from {
     transform: translateX(-100%);
@@ -85,6 +88,257 @@ main {
 .mobile-menu-enter {
   animation: slideInMobile 0.3s ease-out;
 }
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============ SCALE & ZOOM ANIMATIONS ============ */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============ PULSE & BOUNCE ANIMATIONS ============ */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* ============ GLOW ANIMATION ============ */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(45, 80, 22, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(45, 80, 22, 0.6);
+  }
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* ============ ROTATE ANIMATION ============ */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate {
+  animation: rotate 20s linear infinite;
+}
+
+/* ============ LINK HOVER EFFECTS ============ */
+a {
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+  transform: translateY(-2px);
+}
+
+/* Underline animation for links */
+a:not([style*="text-decoration: none"]) {
+  text-decoration: none;
+}
+
+a:not([style*="text-decoration: none"])::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+a:not([style*="text-decoration: none"]):hover::after {
+  width: 100%;
+}
+
+/* ============ BUTTON ANIMATIONS ============ */
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(45, 80, 22, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  z-index: 0;
+}
+
+button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+button > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============ FORM VALIDATION ANIMATIONS ============ */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+input:invalid:focus {
+  animation: shake 0.3s ease;
+  border-color: #ef4444 !important;
+}
+
+input:valid:focus {
+  border-color: #22c55e !important;
+}
+
+/* ============ CARD HOVER EFFECTS ============ */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(45, 80, 22, 0.15);
+}
+
+/* ============ GRADIENT ANIMATION ============ */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* ============ BLUR IN ANIMATION ============ */
+@keyframes blurIn {
+  from {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.animate-blur-in {
+  animation: blurIn 0.6s ease-out forwards;
+}
+
+/* ============ DARK MODE SUPPORT ============ */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+  }
+}
+
 
 /* Link hover effects */
 a {

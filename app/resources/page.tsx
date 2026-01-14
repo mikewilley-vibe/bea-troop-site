@@ -9,17 +9,17 @@ export default function ResourcesPage() {
   return (
     <div>
       <Breadcrumb />
-      <h1 className="text-3xl font-bold mb-2" style={{ color: "#2D5016" }}>
+      <h1 className="text-3xl font-bold mb-2 drop-shadow-sm" style={{ color: "#2D5016" }}>
         📚 Troop Resources
       </h1>
-      <p className="text-slate-600 mb-8">
+      <p className="text-slate-600 mb-8 text-lg">
         Everything you need to support your Girl Scout experience.
       </p>
 
       {categories.map((category) => (
         <div key={category} className="mb-10">
           <h2
-            className="text-2xl font-bold mb-4"
+            className="text-3xl font-bold mb-6 drop-shadow-sm"
             style={{ color: "#2D5016" }}
           >
             {category}
@@ -31,21 +31,21 @@ export default function ResourcesPage() {
                 <a
                   key={resource.id}
                   href={resource.link}
-                  className="rounded-lg p-6 shadow-md hover:shadow-lg transition animate-fade-in-delay-1"
+                  className="rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all animate-fade-in-delay-1 card-hover transform hover:scale-105 active:scale-95"
                   style={{
                     backgroundColor: "#E8F3E8",
-                    borderTop: "3px solid #2D5016",
+                    borderTop: "4px solid #2D5016",
                     textDecoration: "none",
                     animationDelay: `${idx * 0.05}s`,
                   }}
                 >
                   <h3
-                    className="text-lg font-bold mb-2"
+                    className="text-lg font-bold mb-2 drop-shadow-sm"
                     style={{ color: "#2D5016" }}
                   >
                     {resource.title}
                   </h3>
-                  <p className="text-slate-700 text-sm">
+                  <p className="text-slate-700 text-sm leading-relaxed">
                     {resource.description}
                   </p>
                 </a>

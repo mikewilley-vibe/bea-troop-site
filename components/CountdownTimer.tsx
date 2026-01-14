@@ -44,13 +44,13 @@ export default function CountdownTimer({ targetDate, eventName }: CountdownProps
 
   return (
     <div
-      className="rounded-lg p-8 shadow-md animate-fade-in mb-8"
+      className="rounded-xl p-8 shadow-2xl animate-fade-in mb-8 card-hover transition-all duration-300"
       style={{
         background: 'linear-gradient(135deg, #2D5016 0%, #3D7B2F 100%)',
         color: 'white',
       }}
     >
-      <h2 className="text-2xl font-bold mb-6 text-center">⏱️ {eventName}</h2>
+      <h2 className="text-3xl font-bold mb-8 text-center drop-shadow-lg">⏱️ {eventName}</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
           { label: 'Days', value: timeLeft.days },
@@ -58,11 +58,11 @@ export default function CountdownTimer({ targetDate, eventName }: CountdownProps
           { label: 'Minutes', value: timeLeft.minutes },
           { label: 'Seconds', value: timeLeft.seconds },
         ].map((item) => (
-          <div key={item.label} className="text-center">
-            <div className="bg-white bg-opacity-20 rounded-lg p-4 mb-2">
-              <p className="text-4xl font-bold">{String(item.value).padStart(2, '0')}</p>
+          <div key={item.label} className="text-center transform hover:scale-110 transition-transform duration-200">
+            <div className="bg-white bg-opacity-20 rounded-lg p-6 mb-2 backdrop-blur-sm hover:bg-opacity-30 transition-all duration-200 shadow-lg hover:shadow-xl">
+              <p className="text-5xl font-bold drop-shadow-lg animate-pulse" style={{ animationDuration: '1.5s' }}>{String(item.value).padStart(2, '0')}</p>
             </div>
-            <p className="text-sm opacity-90">{item.label}</p>
+            <p className="text-sm opacity-90 font-semibold">{item.label}</p>
           </div>
         ))}
       </div>
